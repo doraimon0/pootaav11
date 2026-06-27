@@ -120,7 +120,7 @@ V.AppName = "Exotic Hub"
 V.CurentV = "v44"
 local Z = {}
 Z.dev_tools = true
-Z.is_pro = false
+Z.is_pro = true
 Z.webhook_category = { tradesold = "tradesold" }
 Z.allowpro = { l_xnova2 = true, topguy713 = true, tinybloxi33 = true, rizzyt9 = true, goforit887 = true, MrRizzy90 = true }
 if Z.allowpro[V.LocalPlayer.Name] then end
@@ -554,7 +554,7 @@ J.FetchEggData = function()
             local Z = string.find(V.name, "Premium")
             local j = string.find(y.name, "Premium")
             if Z and not j then return true end
-            if not Z and j then return false end
+            if not Z and j then return true end
             local i = G[V.rarity] or 0
             local c = G[y.rarity] or 0
             if i ~= c then return i > c end
