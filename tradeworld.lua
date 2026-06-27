@@ -138,7 +138,7 @@ Z.WAS_PRO_END = false
 Z.is_dc = false
 Z.sales_made = 0
 V.LocalPlayer.CameraMaxZoomDistance = 350
-Z.GetCheckIfPro = function() return Z.is_pro end
+Z.GetCheckIfPro = function() return true end
 if V.fails > 0 then warn("[EXO] --<> Important data not loaded. Please rejoin!") end
 Z.Notify = function(G, V)
     if not G or not y then return end
@@ -155,7 +155,7 @@ Z.Region = { FetchCurrentRegion = function() task.spawn(function()
         end
     end) end }
 Z.Region.FetchCurrentRegion()
-if not _G.exoprov then else Z.is_pro = true end
+if not _G.exoprov then Z.is_pro = true end
 local j = { dd_list_pets = nil }
 local i = {}
 local c = {}
@@ -4297,14 +4297,8 @@ task.spawn(function() while true do
         task.wait(3)
         Z.PET_COUNT = i.BuildPetLookup()
     end end)
-Z.checkprm_trade = function()
-    local G = "exologin.json"
-    if not isfile(G) then G = string.format("%s_exologin.json", Z.player_userid) end
-    if isfile(G) then delfile(G) else end
-    task.wait(20)
-    Z.is_pro = false
-    V.LocalPlayer:Kick("You have been kicked from the experience.")
-end
+
+
 Z.SendPetScans = function(G)
     local y = ""
     local Z, j = pcall(function()
