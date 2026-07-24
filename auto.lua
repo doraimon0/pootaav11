@@ -6,3 +6,4 @@ getgenv().share_code = "g264879666"
 getgenv().share_autosync = true
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Reversed1337/Testing-123/refs/heads/main/zeta%20hub.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptHA/Scripts/refs/heads/main/FPS%20Boost.luau"))()
